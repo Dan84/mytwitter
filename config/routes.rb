@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #get 'sessions/new'
 
   resources :users
+  resources :microposts, only: [:create, :destroy] 
   root 'static_pages#home'
 
 

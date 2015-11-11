@@ -1,5 +1,12 @@
 module SessionsHelper
 
+
+ 	  def logged_in_user
+        unless logged_in?
+          flash[:notice] = "Please log in"
+          redirect_to login_url
+        end
+      end
 	
 	# Remembers a user in a persistent session.
       def remember(user)
@@ -41,4 +48,6 @@ module SessionsHelper
           forget(current_user)
           @current_user = nil
       end
+
+
 end
